@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-04-30T00:00:00Z",
+  "title": "Design System: Hance",
+  "extensions": {
+    "colorMeta": {
+      "cinema-black":          { "role": "neutral", "displayName": "Cinema Black",          "canonical": "oklch(0.13 0.012 220)", "tonalRamp": ["oklch(0.07 0.010 220)","oklch(0.10 0.011 220)","oklch(0.13 0.012 220)","oklch(0.17 0.013 220)","oklch(0.22 0.014 220)","oklch(0.30 0.015 220)","oklch(0.42 0.016 220)","oklch(0.58 0.014 220)"] },
+      "cinema-black-raised":   { "role": "neutral", "displayName": "Cinema Black, Raised",  "canonical": "oklch(0.17 0.013 220)", "tonalRamp": ["oklch(0.09 0.011 220)","oklch(0.13 0.012 220)","oklch(0.17 0.013 220)","oklch(0.22 0.014 220)","oklch(0.28 0.015 220)","oklch(0.36 0.015 220)","oklch(0.48 0.014 220)","oklch(0.62 0.013 220)"] },
+      "cinema-black-edge":     { "role": "neutral", "displayName": "Cinema Black, Edge",    "canonical": "oklch(0.22 0.014 220)", "tonalRamp": ["oklch(0.12 0.012 220)","oklch(0.17 0.013 220)","oklch(0.22 0.014 220)","oklch(0.28 0.015 220)","oklch(0.36 0.015 220)","oklch(0.48 0.014 220)","oklch(0.62 0.013 220)","oklch(0.78 0.011 220)"] },
+      "print-cream":           { "role": "neutral", "displayName": "Print Cream",           "canonical": "oklch(0.94 0.015 80)",  "tonalRamp": ["oklch(0.30 0.012 80)","oklch(0.42 0.013 80)","oklch(0.55 0.014 80)","oklch(0.66 0.014 80)","oklch(0.76 0.015 80)","oklch(0.84 0.015 80)","oklch(0.90 0.015 80)","oklch(0.94 0.015 80)"] },
+      "print-cream-mid":       { "role": "neutral", "displayName": "Print Cream, Mid",     "canonical": "oklch(0.72 0.012 80)",  "tonalRamp": ["oklch(0.30 0.010 80)","oklch(0.40 0.011 80)","oklch(0.50 0.011 80)","oklch(0.60 0.012 80)","oklch(0.72 0.012 80)","oklch(0.80 0.012 80)","oklch(0.86 0.012 80)","oklch(0.92 0.012 80)"] },
+      "print-cream-shadow":    { "role": "neutral", "displayName": "Print Cream, Shadow",  "canonical": "oklch(0.52 0.010 80)",  "tonalRamp": ["oklch(0.22 0.008 80)","oklch(0.32 0.009 80)","oklch(0.42 0.010 80)","oklch(0.52 0.010 80)","oklch(0.62 0.011 80)","oklch(0.72 0.011 80)","oklch(0.82 0.011 80)","oklch(0.90 0.010 80)"] },
+      "halation-orange":       { "role": "primary", "displayName": "Halation Orange",      "canonical": "oklch(0.74 0.18 55)",   "tonalRamp": ["oklch(0.30 0.10 55)","oklch(0.42 0.13 55)","oklch(0.52 0.15 55)","oklch(0.62 0.17 55)","oklch(0.74 0.18 55)","oklch(0.82 0.16 55)","oklch(0.88 0.12 55)","oklch(0.94 0.06 55)"] }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",      "purpose": "Hero headline only. Two stacked lines, second line muted." },
+      "headline": { "displayName": "Headline",     "purpose": "Section openers (quickstart, FAQ)." },
+      "title":    { "displayName": "Title",        "purpose": "Quickstart step titles, FAQ questions." },
+      "body":     { "displayName": "Body",         "purpose": "Paragraph copy, FAQ answers. Max measure 65–75ch." },
+      "body-lg":  { "displayName": "Body, Large", "purpose": "Hero subhead. One occurrence per page." },
+      "mono":     { "displayName": "Mono",         "purpose": "CLI commands, code blocks." },
+      "label":    { "displayName": "Label",        "purpose": "Section captions, status pills, mono uppercase 0.18em tracking." }
+    },
+    "shadows": [
+      { "name": "halation-glow", "value": "0 0 60px -10px oklch(0.74 0.18 55 / 0.7)", "purpose": "Used on the hero play-button ring only. The visual rhyme of the brand name." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo",  "value": "cubic-bezier(0.16, 1, 0.3, 1)",  "purpose": "Default for color, opacity, and underline reveals (~300–600ms)." },
+      { "name": "ease-out-quart", "value": "cubic-bezier(0.25, 1, 0.5, 1)",  "purpose": "Used on FAQ open/close rotation and pill state transitions (~300ms)." },
+      { "name": "duration-fast",  "value": "300ms",                          "purpose": "Standard state transition." },
+      { "name": "duration-reveal","value": "600ms",                          "purpose": "Scroll-revealed dividers and one-time entrances." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Install Pill",
+      "kind": "button",
+      "refersTo": "button-install",
+      "description": "Hero CTA. Click-to-copy install command, mono content, halation-orange border. Label flips to 'copied ✓' for 1.5s.",
+      "html": "<button class=\"ds-install\" type=\"button\"><span class=\"ds-install__dollar\">$</span><span class=\"ds-install__cmd\">curl -fsSL get.hance.sh | sh</span><span class=\"ds-install__chip\">copy</span></button>",
+      "css": ".ds-install { display: inline-flex; align-items: center; gap: 12px; padding: 10px 12px 10px 20px; background: oklch(0.13 0.012 220); color: oklch(0.94 0.015 80); border: 1px solid oklch(0.74 0.18 55 / 0.70); border-radius: 9999px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; line-height: 1; cursor: pointer; transition: border-color 300ms cubic-bezier(0.25, 1, 0.5, 1), background-color 300ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-install:hover { border-color: oklch(0.74 0.18 55); } .ds-install:focus-visible { outline: 2px solid oklch(0.74 0.18 55); outline-offset: 3px; } .ds-install__dollar { color: oklch(0.74 0.18 55); user-select: none; } .ds-install__chip { display: inline-flex; align-items: center; padding: 2px 10px; margin-left: 8px; background: oklch(0.74 0.18 55 / 0.10); color: oklch(0.74 0.18 55 / 0.90); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; border-radius: 9999px; }"
+    },
+    {
+      "name": "Download Pill",
+      "kind": "button",
+      "refersTo": "button-download",
+      "description": "Nav-level secondary CTA. Same pill silhouette as install, smaller, sans label.",
+      "html": "<a class=\"ds-download\" href=\"#\">Download</a>",
+      "css": ".ds-download { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: transparent; color: oklch(0.94 0.015 80); border: 1px solid oklch(0.74 0.18 55 / 0.60); border-radius: 9999px; font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 13px; font-weight: 500; text-decoration: none; transition: border-color 300ms cubic-bezier(0.25, 1, 0.5, 1), background-color 300ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-download:hover { border-color: oklch(0.74 0.18 55); background-color: oklch(0.74 0.18 55 / 0.10); }"
+    },
+    {
+      "name": "Alpha Status Chip",
+      "kind": "chip",
+      "refersTo": "chip-alpha",
+      "description": "Bare inline status. Halation-orange dot + mono uppercase label. Sits inline next to the install pill, not in nav.",
+      "html": "<span class=\"ds-alpha\"><span class=\"ds-alpha__dot\" aria-hidden=\"true\"></span>alpha. macOS first.</span>",
+      "css": ".ds-alpha { display: inline-flex; align-items: center; gap: 8px; color: oklch(0.52 0.010 80); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; } .ds-alpha__dot { width: 6px; height: 6px; border-radius: 9999px; background: oklch(0.74 0.18 55 / 0.80); }"
+    },
+    {
+      "name": "Play Button (Hero)",
+      "kind": "button",
+      "refersTo": "play-button",
+      "description": "Sole halation-glow element on the page. Disabled while the reel is pending; presence is symbolic.",
+      "html": "<button class=\"ds-play\" type=\"button\" aria-label=\"Reel coming soon\" disabled><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5.5v13l11-6.5z\"/></svg></button>",
+      "css": ".ds-play { width: 96px; height: 96px; display: inline-flex; align-items: center; justify-content: center; background: oklch(0.13 0.012 220 / 0.85); backdrop-filter: blur(3px); border: 2px solid oklch(0.74 0.18 55); border-radius: 9999px; box-shadow: 0 0 60px -10px oklch(0.74 0.18 55 / 0.70); cursor: not-allowed; transition: background-color 300ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-play:hover { background: oklch(0.13 0.012 220); } .ds-play svg { width: 40px; height: 40px; fill: oklch(0.74 0.18 55); transform: translateX(2px); }"
+    },
+    {
+      "name": "Code Block",
+      "kind": "card",
+      "refersTo": "code-block",
+      "description": "CLI snippet container used in the quickstart. Never wrap prose in this component.",
+      "html": "<pre class=\"ds-code\"><code><span class=\"ds-code__row\"><span class=\"ds-code__dollar\">$</span><span>curl -fsSL get.hance.sh | sh</span></span><span class=\"ds-code__row\"><span class=\"ds-code__dollar\">$</span><span>brew install ffmpeg</span></span></code></pre>",
+      "css": ".ds-code { margin: 0; padding: 16px 20px; background: oklch(0.17 0.013 220 / 0.50); color: oklch(0.94 0.015 80); border: 1px solid oklch(0.22 0.014 220 / 0.70); border-radius: 6px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; line-height: 1.7; overflow-x: auto; } .ds-code__row { display: block; } .ds-code__dollar { color: oklch(0.74 0.18 55 / 0.80); margin-right: 8px; user-select: none; }"
+    },
+    {
+      "name": "FAQ Row",
+      "kind": "custom",
+      "refersTo": "faq-row",
+      "description": "Native details/summary. Plain row, hairline divider above and below, halation-orange '+' that rotates to 'x' on open.",
+      "html": "<details class=\"ds-faq\"><summary><span class=\"ds-faq__q\">Does my footage leave my machine?</span><span class=\"ds-faq__plus\">+</span></summary><p class=\"ds-faq__a\">No. Everything happens locally on your GPU. There is no telemetry and no upload.</p></details>",
+      "css": ".ds-faq { padding: 24px 0; border-bottom: 1px solid oklch(0.22 0.014 220 / 0.80); transition: background-color 300ms cubic-bezier(0.25, 1, 0.5, 1); border-radius: 2px; } .ds-faq:hover { background-color: oklch(0.17 0.013 220 / 0.30); } .ds-faq summary { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; cursor: pointer; list-style: none; } .ds-faq summary::-webkit-details-marker { display: none; } .ds-faq__q { font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 24px; font-weight: 500; letter-spacing: -0.015em; color: oklch(0.94 0.015 80); padding-right: 16px; } .ds-faq__plus { color: oklch(0.74 0.18 55); font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-faq[open] .ds-faq__plus { transform: rotate(45deg); } .ds-faq__a { margin: 16px 0 0; max-width: 68ch; color: oklch(0.72 0.012 80); font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 16px; line-height: 1.55; }"
+    },
+    {
+      "name": "Top Nav",
+      "kind": "nav",
+      "refersTo": "top-nav",
+      "description": "Hairline-free nav. Wordmark left, mono links right, download pill terminal.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav__mark\" href=\"/\">hance</a><ul class=\"ds-nav__links\"><li><a href=\"#\" class=\"ds-nav__link\">Docs</a></li><li><a href=\"#\" class=\"ds-nav__link\">GitHub</a></li><li><a class=\"ds-download\" href=\"#\">Download</a></li></ul></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 28px 64px 0; } .ds-nav__mark { font-family: 'Inter Tight', Inter, system-ui, sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -0.045em; text-transform: lowercase; color: oklch(0.94 0.015 80); text-decoration: none; transition: color 300ms cubic-bezier(0.25, 1, 0.5, 1); } .ds-nav__mark:hover { color: oklch(0.74 0.18 55); } .ds-nav__links { display: flex; align-items: center; gap: 32px; list-style: none; padding: 0; margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; } .ds-nav__link { position: relative; color: oklch(0.72 0.012 80); text-decoration: none; transition: color 300ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav__link::after { content: ''; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: oklch(0.74 0.18 55); transform: scaleX(0); transform-origin: left; transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav__link:hover { color: oklch(0.94 0.015 80); } .ds-nav__link:hover::after { transform: scaleX(1); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Local Darkroom",
+    "overview": "Hance is a film-look engine that runs on your machine, in your terminal, on your GPU. The site is its proof: the page itself looks color-graded. A drenched, warm-cyan-tinted near-black surface holds the entire experience like an unlit darkroom; a single halation-orange accent does all the signaling. There is no chrome theatre here. Type carries the page. The product gets out of its own way.\n\nThe system rejects every visual reflex of its category. It is not the navy-and-cyan dev-tool dashboard. It is not the cream-and-charcoal SaaS landing page. It is not the neon-on-black AI-tool aesthetic. It is not the Adobe-blue creative-cloud marketing site. It refuses gradient text, glassmorphic stat tiles, identical icon-card grids, and isometric illustration. Every section breathes differently; nothing is wrapped in a default container 'for safety'.",
+    "keyCharacteristics": [
+      "Drenched warm-cyan-black surface, one halation-orange accent (≤8% of any viewport).",
+      "Type-led hierarchy: oversized grotesk display, mono captions, no decorative icon families.",
+      "Variable vertical rhythm. Each section sets its own pace.",
+      "Single-page, single-job: every block bends toward download.",
+      "The placeholder itself is graded. There is no 'neutral' surface anywhere in the system."
+    ],
+    "rules": [
+      { "name": "The One Light Rule",        "section": "colors",     "body": "Halation Orange is used on no more than 8% of any rendered viewport. It is the safelight. If the page starts feeling orange, an accent is misplaced." },
+      { "name": "The Tinted-Black Rule",     "section": "colors",     "body": "Pure #000 and pure #fff are forbidden. Every neutral carries chroma 0.010–0.015 toward cyan (surfaces) or warm yellow (type)." },
+      { "name": "The No Second Accent Rule", "section": "colors",     "body": "No green-success, no red-error, no link-blue. Either Halation Orange handles it, or type weight handles it." },
+      { "name": "The Two-Voice Rule",        "section": "typography", "body": "Sans for content, mono for the machine. Never set running prose in mono and never set a CLI snippet in sans." },
+      { "name": "The Tight-Stack Rule",      "section": "typography", "body": "Display and headline type are set with tight leading (0.92 / 0.95) and aggressive negative tracking (-0.045em / -0.025em)." },
+      { "name": "The One Paragraph Rule",    "section": "typography", "body": "The hero subhead is the only Body Large in the system. Every other paragraph is Body." },
+      { "name": "The Flat-By-Default Rule",  "section": "elevation",  "body": "No drop shadows on cards, panels, popovers, or buttons. Raise tonal value, not shadow." },
+      { "name": "The Hairline Rule",         "section": "elevation",  "body": "Borders and dividers are exactly 1px in Cinema Black Edge. Halation-orange borders are reserved for interactive affordances." },
+      { "name": "The Halation-Once Rule",    "section": "elevation",  "body": "The orange glow shadow appears on one element per page (the play button). If a second needs it, the first one stops having it." }
+    ],
+    "dos": [
+      "Do keep Halation Orange usage at or below 8% of any viewport.",
+      "Do tint every neutral. Surfaces toward cyan; type toward warm.",
+      "Do set display and headline type at tight leading and aggressive negative tracking.",
+      "Do vary vertical rhythm between sections.",
+      "Do carry CLI snippets in JetBrains Mono and prose in Inter Tight.",
+      "Do pair every accent surface with the alpha-status copy nearby.",
+      "Do prefer hairlines, tonal layering, and whitespace over panels and shadows."
+    ],
+    "donts": [
+      "Don't use #000 or #fff anywhere in the system.",
+      "Don't introduce a second accent color.",
+      "Don't set gradient text via background-clip: text.",
+      "Don't use glassmorphism decoratively. The hero play button is the only blur.",
+      "Don't wrap sections in cards or three-column feature-card grids.",
+      "Don't add isometric illustrations, mesh backgrounds, Trusted-by logo strips, stock-photo lifestyle shots, neon-cyan grids, or AI-mesh gradients.",
+      "Don't use side-stripe borders greater than 1px.",
+      "Don't write em dashes in copy.",
+      "Don't animate layout properties; animate transform, opacity, filter, clip-path. Always ease-out-expo or ease-out-quart.",
+      "Don't add a theme toggle.",
+      "Don't reuse the Halation Glow on more than one element per page."
+    ]
+  }
+}
